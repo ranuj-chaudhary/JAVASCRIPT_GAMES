@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: url("./background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+#game-board {
+  width: 450px;
+  height: 450px;
+  border: 4px solid #999;
+  border-radius: 8px;
+  background-color: lightblue;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#game-board img {
+  width: 50px;
+  height: 50px;
+}
+#game-board img:hover {
+  cursor: grab ;
+}
+
