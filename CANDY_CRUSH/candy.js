@@ -7,15 +7,20 @@ let currentTile;
 let otherTile;
 let score = 0;
 
-window.onload = () => {
+
   startGame();
-  setInterval(() => {
+  runGame();
+  score = 0;
+  document.querySelector(".score").innerHTML = score;
+
+
+function runGame() {
+  for (let i = 0; i < 3; i++) {
     crushCandies();
     fillCandies();
     generateCadies();
-  }, 200);
-  document.querySelector(".score").innerHTML = score;
-};
+  }
+}
 
 function randomCandies(candies) {
   const random = Math.floor(Math.random() * candies.length);
@@ -36,7 +41,6 @@ function startGame() {
       img.addEventListener("dragleave", dragleave);
       img.addEventListener("drop", dragdrop);
       img.addEventListener("dragend", dragend);
-
       document.querySelector("#game-board").append(img);
       row.push(img);
     }
@@ -76,6 +80,8 @@ function dragend() {
     currentTile.src = otherTileSrc;
     otherTile.src = currTileSrc;
   }
+
+  runGame()
 }
 
 function crushCandies() {
